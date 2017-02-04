@@ -1,4 +1,5 @@
 const guid = require('uuid/v4');
+var db = _getDatabase();
 
 
 /**
@@ -41,10 +42,12 @@ function deleteItem(itemId, callback) {
     if (db.items[i].id === itemId) {
       // Remove that element from the array
       db.items.splice(i, 1);
-      callback(null);
+      if (callback)
+        callback(null);
     }
   }
-  callback(null);
+  if (callback)
+    callback(null);
 }
 
 /**
