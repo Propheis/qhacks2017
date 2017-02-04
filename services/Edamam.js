@@ -13,7 +13,8 @@ var https = require('https')
   "&from=0&to=50&q=";
   // Add our keywords
   keywordList.forEach(function(keyword, index) {
-    queryString += keyword;
+    // escape 
+    queryString += encodeURIComponent(keyword);
 
     if (index < keywordList.length - 1)
       queryString += "%2B";
