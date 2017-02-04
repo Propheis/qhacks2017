@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router()
+  , Edamam = require('../services/Edamam')
   , dbService = require('./dbService')
   , bodyParser = require('body-parser')
   , jsonParser = bodyParser.json();
@@ -9,7 +10,7 @@ function isGuid(input) {
   return re.test(input);
 }
 
-router.get('/items', function(req, res, next) {
+router.get('/items', function(req, res) {
   dbService.getItems(function(err, items) {
     if (err) {
       console.log("Accessing the db failed");
@@ -20,7 +21,19 @@ router.get('/items', function(req, res, next) {
   });
 });
 
-router.get('/items/:id', function(req, res, next) {
+
+router.post('/items', jsonParser, function(req, res) {
+  dbService.updateItem(req.body, function(err, item) {
+    if (err) {
+      console.log("Creating the item failed");
+      res.sendStatus(500);
+      return;
+    }
+    res.json(item);
+  });
+});
+
+router.get('/items/:id', function(req, res) {
   if ( !isGuid(req.params["id"]) ) {
     res.sendStatus(400);
     return;
@@ -36,18 +49,7 @@ router.get('/items/:id', function(req, res, next) {
   });
 });
 
-router.post('/items', jsonParser, function(req, res, next) {
-  dbService.updateItem(req.body, function(err, item) {
-    if (err) {
-      console.log("Creating the item failed");
-      res.sendStatus(500);
-      return;
-    }
-    res.json(item);
-  });
-});
-
-router.post('/items/:id', jsonParser, function(req, res, next) {
+router.post('/items/:id', jsonParser, function(req, res) {
   if ( !isGuid(req.params["id"]) ) {
     res.sendStatus(400);
     return;
@@ -64,7 +66,7 @@ router.post('/items/:id', jsonParser, function(req, res, next) {
   });
 });
 
-router.delete('/items/:id', function(req, res, next) {
+router.delete('/items/:id', function(req, res) {
   if ( !isGuid(req.params["id"]) ) {
     res.sendStatus(400);
     return;
@@ -77,6 +79,15 @@ router.delete('/items/:id', function(req, res, next) {
       return;
     }
     res.json('{ message: "Successfully deleted the item" }');
+  });
+});
+
+router.post('/recipes', jsonParser, function(req, res) {
+  Edamam.getRecipeResults(req.body, function(err, results) {
+    if (err)
+      res.statusCode(500);
+    else
+      res.json(results);
   });
 });
 

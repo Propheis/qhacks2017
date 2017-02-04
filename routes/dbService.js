@@ -1,5 +1,5 @@
 const guid = require('uuid/v4');
-var db = _getDatabase();
+
 
 /**
  * Fetches all items in the database
@@ -117,5 +117,5 @@ module.exports = {
   getItem: getItem,
   getItems: getItems,
   updateItem: updateItem,
-  deleteItem: deleteItem 
+  deleteItem: deleteItem
 };
