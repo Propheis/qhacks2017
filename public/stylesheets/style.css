@@ -1,15 +1,37 @@
 body {
-  padding: 50px;
-  font-family: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(243, 242, 236);
+	padding: 50px;
+	font-family: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: rgb(243, 242, 236);
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
 }
 
+#header {
+	text-align: left;
+	padding: 10px
+}
+
+#footer
+
+.container{
+	display: flex;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	flex-direction: column;
+}
+.content{
+	flex-direction: column;
+}
+.singleItem {
+	flex-direction: row;
+}
+}
 #website {
 	font-family: 'Montserrat', Helvetica, sans-serif;
 	font-family: 'Nixie One', sans-serif;
 	font-family: 'Anonymous Pro', sans-serif;
 }
+
