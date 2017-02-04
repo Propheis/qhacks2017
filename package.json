@@ -10,11 +10,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.14.0",
-<<<<<<< HEAD
     "hbs": "^4.0.1",
-=======
-    "express-handlebars": "^3.0.0",
->>>>>>> a0b75c24d13c5139afd0d19c8475a96910b2a39f
     "jade": "~1.11.0",
     "mongodb": "^2.2.22",
     "morgan": "~1.7.0",
