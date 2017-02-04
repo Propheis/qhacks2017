@@ -1,8 +1,13 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(243, 242, 236);
 }
 
 a {
   color: #00B7FF;
+}
+
+#website {
+	font-family: 'Montserrat', Helvetica, sans-serif;
 }
