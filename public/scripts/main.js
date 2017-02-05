@@ -31,6 +31,24 @@ function GroceryViewModel() {
 			console.log("Item added to server");
 		});
 	};
+	self.getItem = function(id){
+		var item;
+		self.items().forEach(function(x){
+			if(x._id() === id){
+				item = x;
+			}
+		});
+		return item;
+	};
+	self.deleteOnClick = function(event){
+		var toDelete = $(event.currentTarget).data("item-id");
+		var itemToDelete = self.getItem(toDelete);
+		if (itemToDelete){
+			self.removeItem(itemToDelete);
+		}else{
+			console.log("no item to delete found");
+		}
+	};
 	self.removeItem = function(item) { 
 		$.ajax("/api/items/" + item.id, {
 			method: "DELETE"
@@ -38,6 +56,7 @@ function GroceryViewModel() {
 		self.items.destroy(item); 
 		console.log("Item deleted");
 	};
+	
 	self.startup = function (){
 		$("#addFood").focus();
 		$.get("/api/items", null, function (itemList){
@@ -91,5 +110,7 @@ $(document).keypress(function(e){
         $("#addBtn").click();
     }
 });
+
+$(document).on('click', 'button.delete', viewModel.deleteOnClick);
 
 $(document).on('change', '.percentSlider', onSliderChanged);
