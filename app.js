@@ -1,13 +1,13 @@
-var express = require('express');
-var hbs = require('hbs');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express = require('express')
+  , hbs = require('hbs')
+  , path = require('path')
+  , favicon = require('serve-favicon')
+  , logger = require('morgan')
+  , cookieParser = require('cookie-parser')
+  , bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var api = require('./routes/api');
+var index = require('./routes/index')
+  , api = require('./routes/api');
 
 var app = express();
 

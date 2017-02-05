@@ -42,8 +42,10 @@ h1{
 	padding: 20px;
 	flex-direction: column;
 }
-.content{
-	flex-direction: column;
+#content {
+	background-color: #FFFFFF;
+	padding: 25px;
+	box-shadow: 5px 5px 5px 5px #D5D5CF;
 }
 #website {
 	font-family: 'Nixie One', sans-serif;
@@ -97,13 +99,6 @@ html {
 	margin-top: 30px;
 	flex: 0;
 	min-width: 400px;
-}
-
-#header {
-	display: flex;
-	align-items: center;
-	padding: 0px;
-	font-family: 'Nixie One', sans-serif;
 }
 
 @media all and (max-width: 830px) {

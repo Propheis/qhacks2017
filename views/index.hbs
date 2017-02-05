@@ -27,49 +27,48 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1 id= "website"><b>
+			<h1 id= "website">
 				myEats 
-			</b></h1>
-
+			</h1>
 			<!--Dropdown menu and search buttons-->
 			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
 				<a type="button" class="btn btn-default" href="/recipes">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</a>
 				<div class="btn-group" role="group">
-    				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      					<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-    				</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					</button>
 					<ul class="dropdown-menu">
-      					<li><a href="#">Vegetarian</a></li>
-      					<li><a href="#">Vegan</a></li>
-      					<li><a href="#">Gluten Free</a></li>
-    				</ul>
-  				</div> <!--end button-group-->
-  			</div><!--end dropDownMenu-->
+						<li><a href="#">Vegetarian</a></li>
+						<li><a href="#">Vegan</a></li>
+						<li><a href="#">Gluten Free</a></li>
+					</ul>
+				</div> <!--end button-group-->
+			</div><!--end dropDownMenu-->
 		</div><!--end header-->
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
 		<div id="content">
-			<div data-bind="forech: item" id="singleItem">
-			<input id="food1" type="checkbox" name="foodItem" value="">
-				<label data-bind="text: displayName()">Item1</label>
-				<input type="range" name="groceryItems">
+			<div data-bind="foreach: items" id="singleItem">
+				<input id="food1" type="checkbox" name="foodItem" value="">
+				<label data-bind="text: displayName()"></label>
+				<input data-bind="value: percentRemaining" type="range" name="groceryItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
 		<!--Add new item textbox and button and camera button-->
 		<div id="footer">
 			<div id="newItemAdd" class="input-group">
-				<input type="text" class="form-control" placeholder="Add New Item..." aria-label="...">
+				<input data-bind="textInput: newItem" placeholder="Add New Item..." type="text" class="form-control" aria-label="...">
 				<div class="input-group-btn">
-  					<button type="button" class="btn btn-default">
-  						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-  					</button>
-  					<button type="button" class="btn btn-default">
-  						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-  					</button>
-  				</div><!--end input-group-btn-->
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+					</button>
+					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+				</div><!--end input-group-btn-->
 			</div><!--end newItemAdd-->
 		</div><!--end footer-->
 	</div><!--end container-->

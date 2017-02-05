@@ -6,7 +6,7 @@ var https = require('https')
  * @param {keywordList:String[]} - The list of recipe keywords to search for
  * @returns {String} - The well formed url to query Edamam
  */
- function formRequestUrl(keywordList) {
+ function createRequestUrl(keywordList) {
   // Build the query string to search the API
   var queryString = "?app_id=" + config.edamamAPI.app_id +
   "&app_key=" + config.edamamAPI.app_key + 
@@ -30,7 +30,7 @@ var https = require('https')
  */
 function getRecipeResults(keywordList, callback) {
   console.log("Querying Edamam.com...");
-  var queryUrl = formRequestUrl(keywordList);
+  var queryUrl = createRequestUrl(keywordList);
   
   https.get(queryUrl, function(res) {
     var body = '';
