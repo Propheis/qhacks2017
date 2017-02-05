@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router()
   , Edamam = require('../services/Edamam')
-  , dbService = require('./dbService')
+  , dbService = require('../services/dbService')
   , bodyParser = require('body-parser')
   , jsonParser = bodyParser.json();
 
@@ -25,8 +25,8 @@ router.get('/items', function(req, res) {
 router.post('/items', jsonParser, function(req, res) {
   dbService.updateItem(req.body, function(err, item) {
     if (err) {
-      console.log("Creating the item failed");
-      res.sendStatus(500);
+      console.log("Creating the item failed: " + err.reason);
+      res.sendStatus(400);
       return;
     }
     res.json(item);
@@ -41,29 +41,33 @@ router.get('/items/:id', function(req, res) {
 
   dbService.getItem(req.params.id, function(err, item) {
     if (err) {
-      console.log("Accessing the db failed");
-      res.sendStatus(500);
+      res.sendStatus(err.statusCode);
       return;
     }
     res.json(item);
   });
 });
 
-router.post('/items/:id', jsonParser, function(req, res) {
-  if ( !isGuid(req.params["id"]) ) {
+router.post('/items', jsonParser, function(req, res) {
+  if ( !req.body || !req.body._id || !isGuid(req.body._id) ) {
     res.sendStatus(400);
     return;
   }
 
-  dbService.updateItem(req.body, function(err, item) {
-    if (err) {
-      console.log("Could not update the item");
-      res.sendStatus(500);
-      return;
-    }
+  var item = req.body;
 
-    res.json(item);
+  dbService.updateItem(item, function(err, newItem) {
+    if (err) {
+      console.log("Could not update the item: " + err.reason);
+      console.log(err);
+      res.sendStatus(500);
+    } 
+    else {
+      console.log("API Sending Response");
+      res.json(item);
+    }
   });
+
 });
 
 router.delete('/items/:id', function(req, res) {
@@ -83,11 +87,25 @@ router.delete('/items/:id', function(req, res) {
 });
 
 router.post('/recipes', jsonParser, function(req, res) {
+  if (!req.body.forEach)
+    res.statusCode(400);
+
   Edamam.getRecipeResults(req.body, function(err, results) {
-    if (err)
+    if (err) {
+      console.log(err);
       res.statusCode(500);
+    }
     else
       res.json(results);
+  });
+});
+
+///////////////////////
+router.get('/seed', function(req, res){
+  dbService.reSeedDatabase(function(err){
+    if (err)
+      res.json(err);
+    res.json('{"status": "Seeded the database"}');
   });
 });
 
