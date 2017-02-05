@@ -43,7 +43,7 @@
 	<div id="containter">
 		<div id="header">
 			<h1 id= "website">
-				MyEats 
+				MyEats
 			</h1>
 
 			<!--Dropdown menu and search buttons-->
@@ -66,22 +66,22 @@
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
 		<div id="content">
-			<div data-bind="forech: item" id="singleItem">
+			<div data-bind="foreach: items" id="singleItem">
 			<input id="food1" type="checkbox" name="foodItem" value="">
-				<label data-bind="text: displayName()">Item1</label>
-				<input type="range" name="groceryItems">
+				<label data-bind="text: displayName()"></label>
+				<input data-bind="value: percentRemaining" type="range" name="groceryItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
 		<!--Add new item textbox and button and camera button-->
 		<div id="footer">
 			<div id="newItemAdd" class="input-group">
-				<input type="text" class="form-control" aria-label="...">
+				<input data-bind="textInput: newItem" type="text" class="form-control" aria-label="...">
 				<div class="input-group-btn">
   					<button type="button" class="btn btn-default">
   						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
   					</button>
-  					<button type="button" class="btn btn-default">
+  					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
   						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
   					</button>
   				</div><!--end input-group-btn-->
