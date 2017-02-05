@@ -108,6 +108,7 @@ viewModel.startup();
 $(document).keypress(function(e){
     if (e.which == 13){
         $("#addBtn").click();
+        $("#addFood").val("");
     }
 });
 
