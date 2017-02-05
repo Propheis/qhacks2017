@@ -22,12 +22,14 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
 	<style type="text/css">
 
 		#header {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			font-family: 'Nixie One', sans-serif;
 		}
 
 		#header h1 {
@@ -69,11 +71,6 @@
 				<label data-bind="text: displayName()">Item1</label>
 				<input type="range" name="groceryItems">
 			</div><!--end singleItem-->
-			<div id="singleItem">
-				<input id="food2" type="checkbox" name="foodItem" value="" data-bind="checked: isGone()">
-				<label for="food2">Item2</label>
-				<input type="range" name="groceryItems">
-			</div>
 		</div><!--end content-->
 
 		<!--Add new item textbox and button and camera button-->
