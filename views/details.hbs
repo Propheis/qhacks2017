@@ -11,27 +11,33 @@
 
 <body>
 	<div class="page">
-		<div id="searchBar">
-			<div class="col-lg-6">
-				<div class="input-group">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">Enter</button>
-					</span>
-					<input type="text" class="form-control" placeholder="Enter Something to Search">
-				</div><!--end input-group -->
-			</div><!--end col-lg-6-->
-		</div><!--end searchbar-->
-		<div id="searchWarning">
-			<p>Search for a Recipe by Entering Keywords into the Search Bar.</p>
-		</div>
-		<div class="food">
-			<h1> Turkey Dinner </h1>
-			<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
-		</div>
-		<div class="recipe">
-			<h2> Recipe </h2>
-			<p> Some random recipe here lol </p>
+		<div class="col-lg-6">
+			<div class="input-group">
+				<a type="button" class="btn btn-default" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+			</span>
+		</div><!--end input-group -->
+	</div><!--end col-lg-6-->
+	<h2> Recipe Details </h2>
+	<!-- ko if: currentRecipe -->
+	<div class="food">
+		<h1 data-bind="text: currentRecipe.label"></h1>
+		<img data-bind="attr: {src: currentRecipe.image}" style="width:300px;height:300px;">
+	</div>
+	<div class="currentRecipe">
+		<p data-bind="foreach: currentRecipe.ingredientLines">
+			<span data-bind="text: $data"></span>, 
+		</p>
+		<div class="tags">
+			<p data-bind="foreach: currentRecipe.healthLabels">
+				<span data-bind="text: $data"></span>, 
+			</p>
 		</div>
 	</div>
+	<!-- /ko -->
+	<!-- ko ifnot: currentRecipe -->
+	<p>You first need to click on a recipe title to see it's details!. <a href="/recipes">Search for a recipe.</a></p>
+	<!-- /ko -->
+</div>
 </body>
+<script src="/scripts/detailscript.js"></script>
 </html>

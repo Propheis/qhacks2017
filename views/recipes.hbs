@@ -20,7 +20,7 @@
   					<div class="input-group">
       					<input data-bind="textInput: searchText" id="searchBar" type="text" class="form-control" placeholder="Enter...">
       					<span class="input-group-btn">
-      						<a data-bind="click: searchRecipes" type="button" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+      						<a id="searchBtn" data-bind="click: searchRecipes" type="button" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
         					<a type="button" class="btn btn-default" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
         					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
@@ -40,7 +40,7 @@
 		<div data-bind="foreach: recipes" class="listing">
 			<img data-bind="attr: {src: recipe.image}" style="width:300px;height:300px;">
 			<div class="desc">
-				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: recipe.label"></h1>
+				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: recipe.label, attr:{'data-item-url': recipe.url}"></h1>
 				<p data-bind="foreach: recipe.ingredientLines">
 					<span data-bind="text: $data"></span>, 
 				</p>

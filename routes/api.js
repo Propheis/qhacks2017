@@ -89,10 +89,11 @@ router.delete('/items/:id', function(req, res) {
 router.post('/recipes', jsonParser, function(req, res) {
   try {
     var keywords = req.body["[]"];
+    console.log(keywords);
     if (!keywords)
       throw new Error();
 
-    console.log(keywords);
+    
 
     Edamam.getRecipeResults(keywords, function(err, results) {
       if (err) {

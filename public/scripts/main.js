@@ -11,7 +11,6 @@ function GroceryViewModel() {
 	self.items = ko.observableArray([]);
 	self.newItem = ko.observable("");
 
-
 	self.addItem = function () {
 		var newFood = new Food(self.newItem(), 100, []);
 		newFood._id = newFood._id();
@@ -44,4 +43,9 @@ function GroceryViewModel() {
 var viewModel = new GroceryViewModel();
 ko.applyBindings(viewModel);
 viewModel.startup();
+$(document).keypress(function(e){
+    if (e.which == 13){
+        $("#addBtn").click();
+    }
+});
 
