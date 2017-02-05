@@ -35,116 +35,121 @@
 			background-color: #ffffff;
 			box-shadow: 5px 5px #D5D5CF;
 			font-family: 'Nixie One', sans-serif;
-			padding: 20px;
-			border-bottom: solid #D5D5CF;
-			flex-wrap: wrap;
-		}
-		.listing img {
-			vertical-align: center;
 		}
 		.desc {
 			margin-left: 20px;
 			max-width: 450px;
 			font-size: 22px;
 			padding: 10px;
-			border-right: dotted #D5D5CF;
 		}
-		.tags {
-			display: inline-flex;
+		.verticalLine {
+			border-left: dotted #D5D5CF;
+		}
+		.tags ul {
 			font-size: 20px;
-			align-items: right;
+			vertical-align: middle;
+			list-style-type: circle;
+			align-items: left;
 			font-family: 'Anonymous Pro', sans-serif;
 			padding-left: 15px;
 			margin-left: 20px;
-			margin-top: 30px;
-			flex: 0;
-			min-width: 250px;
 		}
 
-		@media all and (max-width: 830px) {
-			#header {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				font-family: 'Nixie One', sans-serif;
-			}
+		#header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-family: 'Nixie One', sans-serif;
+
+		@media all and (max-width: 780px) {
 			.listing {
 				flex-direction: column;
-				align-items: center;
 			}
 			.listing img {
-				margin: 20px auto 0px auto;
-				align-content: center;
-
-			}
-			.tags {
-				text-align: center;
-				margin: 10px auto 10px auto;
-			}
-			.desc {
-				border-right: transparent;
-				text-align: center;
 				margin: 0 auto;
 			}
 		}
-		@media all and (max-width: 1080px) {
-			.listing {
-				flex-direction: row;
-				align-content: center;
-			}
-			.listing img {
-				margin: 20px auto 0px auto;
-			}
-			.tags {
-				flex-wrap: nowrap;
-				min-width: 100%;
+	</style>
+</head>
 
-			}
-			.desc {
-				border-right: transparent;
-			}
-
-		</style>
-	</head>
-
-	<body>
-		<div id="page">	
-			<div id="header">
-				<h1>
-					Recipes
-				</h1>
-				<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+<body>
+	<div id="page">
+	<!--Emma added the options and home buttons-->
+		<div id="header">
+			<h1><b>
+			Recipes
+			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+				<div class="btn-group" role="group">
 					<a type="button" class="btn btn-default" href="/">
 						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 					</a>
-					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-						</button>
+    					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+    					</button>
+    				<a type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Vegetarian</a></li>
-							<li><a href="#">Vegan</a></li>
-							<li><a href="#">Gluten Free</a></li>
-						</ul>
-					</div> <!--end button-group-->
-				</div><!--end dropDownMenu-->
-			</div><!--end header-->
+      						<li><a href="#">Vegetarian</a></li>
+      						<li><a href="#">Vegan</a></li>
+      						<li><a href="#">Gluten Free</a></li>
+    					</ul>
+  				</div> <!--end button-group-->
+  				<input type="text" class="form-control" aria-label="...">
+  			</div><!--end dropDownMenu-->
+		</div><!--end header-->
+		<div class="recipeList">
+			<div class="recipe">
+				<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
+				<div class="desc">
+					<h1> Turkey Dinner </h1>
+					<p>A delicious turkey dinner, perfect for the holidays! Easy to follow recipes for beginners, making your Thanksgiving an easy one! </p>
+				</div>
+				<div class="verticalLine"></div>
+				<div class="tags">
+					<ul>
+						<li>Turkey</li>
+						<li>Bread</li>
+						<li>Cranberries</li>
+					</ul>
 
-			<div data-bind="foreach: recipes">
-				<div class="listing">
-					<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
-					<div class="desc">
-						<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
-						<p data-bind="foreach: ingredientLines">
-							<span data-bind="text: $data"></span>, 
-						</p>
-					</div>
-					<div class="tags">
-						<p data-bind="foreach: healthLabels">
-							<span data-bind="text: $data"></span>, 
+	{{!-- <div id="page" class="flex-container">
+		<div id = "header">
+			<font size=30> Recipes </font>
+		</div>
+		<div data-bind="foreach: recipes" id="contents" class="flex-container">
+			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+			<div class="flex-item">
+				<div id="desc">
+					<font onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"size=10></font>
+					<p><font data-bind="text: ingredientLines" size=6></font>
+					</p>
+>>>>>>> bee58404c0021e97bb3db43d4a4a55b159662a78
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div> --}}
 
-							
-						</div>
-					</body>
-					<script src="/scripts/recipescript.js"></script>
-					</html>
+
+	<div id="page">	
+		<div data-bind="foreach: recipes" class="listing">
+			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+			<div class="desc">
+				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
+				<p data-bind="foreach: ingredientLines">
+					<span data-bind="text: $data"></span>, 
+				</p>
+			</div>
+			<div class="verticalLine"></div>
+			<div class="tags">
+				<p data-bind="foreach: healthLabels">
+					<span data-bind="text: $data"></span>, 
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="/scripts/recipescript.js"></script>
+</html>
