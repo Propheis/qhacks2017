@@ -33,11 +33,18 @@ function getItems(callback) {
  * @param (item: Item) - The item to add/update
  * @param (callback: Function) - A callback of form (err, Item). If err is defined, then an error has occured.
  */
- function updateItem(item, callback) {
+function updateItem(item, callback) {
+  var updateDone = function(err) {
+    if (!err)
+      getItem(item._id, callback);
+    else
+      callback(err);
+  };
+
   if (!item._id) {
     item._id = guid();
     delete item._rev;
-    items.insert(item, callback);
+    items.insert(item, {include_docs: true}, updateDone);
   }
   else {
     items.get(item._id, function(err, newItem) {
@@ -46,7 +53,7 @@ function getItems(callback) {
         return;
       }
 
-      items.insert(item, callback);
+      items.insert(item, {include_docs: true}, updateDone);
     });
   }
 }
