@@ -35,71 +35,90 @@
 			background-color: #ffffff;
 			box-shadow: 5px 5px #D5D5CF;
 			font-family: 'Nixie One', sans-serif;
+			padding: 20px;
+			border-bottom: solid #D5D5CF;
+			flex-wrap: wrap;
+		}
+		.listing img {
+			vertical-align: center;
 		}
 		.desc {
 			margin-left: 20px;
 			max-width: 450px;
 			font-size: 22px;
 			padding: 10px;
+			border-right: dotted #D5D5CF;
+
 		}
-		.verticalLine {
-			border-left: dotted #D5D5CF;
-		}
-		.tags ul {
+		.tags {
+			display: inline-flex;
 			font-size: 20px;
-			vertical-align: middle;
-			list-style-type: circle;
-			align-items: left;
+			align-items: right;
 			font-family: 'Anonymous Pro', sans-serif;
 			padding-left: 15px;
 			margin-left: 20px;
+			margin-top: 30px;
+			flex: 0;
+			min-width: 250px;
 		}
-		@media all and (max-width: 780px) {
+		
+
+		@media all and (max-width: 830px) {
 			.listing {
 				flex-direction: column;
+				align-items: center;
 			}
 			.listing img {
+				margin: 20px auto 0px auto;
+				align-content: center;
+
+			}
+			.tags {
+				text-align: center;
+				margin: 10px auto 10px auto;
+			}
+			.desc {
+				border-right: transparent;
+				text-align: center;
 				margin: 0 auto;
 			}
 		}
+		@media all and (max-width: 1080px) {
+			.listing {
+				flex-direction: row;
+				align-content: center;
+			}
+			.listing img {
+				margin: 20px auto 0px auto;
+			}
+			.tags {
+				flex-wrap: nowrap;
+				min-width: 100%;
+				
+			}
+			.desc {
+				border-right: transparent;
+			}
+		
 	</style>
 </head>
 
 <body>
-
-	{{!-- <div id="page" class="flex-container">
-		<div id = "header">
-			<font size=30> Recipes </font>
-		</div>
-		<div data-bind="foreach: recipes" id="contents" class="flex-container">
-			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
-			<div class="flex-item">
-				<div id="desc">
-					<font onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"size=10></font>
-					<p><font data-bind="text: ingredientLines" size=6></font>
+	<div id="page">	
+		<div data-bind="foreach: recipes">
+			<div class="listing">
+				<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+				<div class="desc">
+					<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
+					<p data-bind="foreach: ingredientLines">
+						<span data-bind="text: $data"></span>, 
 					</p>
 				</div>
-			</div>
-			
-		</div>
-	</div>
-</div> --}}
-
-
-	<div id="page">	
-		<div data-bind="foreach: recipes" class="listing">
-			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
-			<div class="desc">
-				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
-				<p data-bind="foreach: ingredientLines">
-					<span data-bind="text: $data"></span>, 
-				</p>
-			</div>
-			<div class="verticalLine"></div>
-			<div class="tags">
-				<p data-bind="foreach: healthLabels">
-					<span data-bind="text: $data"></span>, 
-				</p>
+				<div class="tags">
+					<p data-bind="foreach: healthLabels">
+						<span data-bind="text: $data"></span>, 
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

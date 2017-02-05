@@ -2,15 +2,15 @@
 <html>
 <!--
 	This is the webpage for the detailed view for each recipe
- -->
+-->
+
 
 <head>
-	<head>
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
 	<style>
 		#map {
-			height: 700px;
+			height: 500px;
 			width: 360px;
 			vertical-align: left;
 		}
@@ -19,36 +19,39 @@
 			overflow: scroll;
 			overflow-x: hidden;
 		}
-		.recipe {
+		.page {
 			background: #00B7FF;
-			display: flex;
-			flex-direction: column;
-			font-size: 15px;
 			background-color: #ffffff;
+			flex-direction: column;
 			box-shadow: 5px 5px #D5D5CF;
+		}
+		.food {
+			display: flex;
+			font-size: 15px;
+			font-style: bold;
+			align-items: center;
+			flex-direction: column;
 			font-family: 'Nixie One', sans-serif;
 		}
-		.ingredients {
+		.recipe {
 			font-size: 20px;
 			list-style-type: circle;
+			text-align: center;
 			font-family: 'Anonymous Pro', sans-serif;
 		}
+
 	</style>
 </head>
 
 <body>
-	<div id="page">
-		<div class="recipe">
+	<div class="page">
+		<div class="food">
 			<h1> Turkey Dinner </h1>
 			<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
-			<div class="ingredients">
-				<h2> Ingredients </h2>
-				<u1>
-					<l1>Turkey</li>
-					<li>Bread</li>
-					<li>Cranberries</li>
-				</ul>
-			</div>
+		</div>
+		<div class="recipe">
+			<h2> Recipe </h2>
+			<p> Some random recipe here lol </p>
 		</div>
 	</div>
 </body>
