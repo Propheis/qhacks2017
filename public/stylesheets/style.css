@@ -129,6 +129,24 @@ html {
 	text-align: center;
 }
 
+@media all and (min-width: 1231px) {
+	.listing {
+		flex-direction: column;
+	}
+	.listing img {
+		padding-top:15px;
+	}
+	.desc {
+		margin: 0;
+		max-width: 100%;
+	}
+	.tags {
+		margin: 0;
+		padding: 10px 0 25px 0;
+		border-bottom: 5px solid #ccc;
+	}
+}
+
 @media all and (max-width: 830px) {
 	.listing {
 		flex-direction: column;

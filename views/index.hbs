@@ -49,7 +49,7 @@
 		</div><!--end header-->
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
-		<div id="content" class="col-sm-12">
+		<div id="content">
 			<div data-bind="foreach: items" id="singleItem" class="checkbox">
 				<button data-bind="attr: {'data-item-id':_id}" class="btn delete"><span class="glyphicon glyphicon-trash"></span></button>
 				<label data-bind="text: displayName()"></label>
