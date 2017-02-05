@@ -11,8 +11,8 @@ function Food(displayName, percentRemaining, knownAliases, id, rev) {
 			displayName: self.displayName(),
 			percentRemaining: self.percentRemaining(),
 			knownAliases: self.knownAliases(),
-			_id: self._id(),
-			_rev: self._rev()
+			_id: (!self._id) ? undefined : self._id(),
+			_rev: (!self._rev) ? undefined: self._rev()
 		};
 	}
 }

@@ -41,11 +41,11 @@ h1{
 	margin-right: 10px;
 }
 #content {
-	margin: 0 30px;
 	background: #ffffff;
 	box-shadow: 5px 5px #D5D5CF;
 	flex-direction: row;
 	padding: 25px;
+	margin-bottom: 35px;
 }
 .container {
 	display: flex;
@@ -107,6 +107,21 @@ html {
 	margin-top: 30px;
 	flex: 0;
 	min-width: 400px;
+}
+#recPlaceholder{
+	align-items: center;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 20px;
+	vertical-align: center;
+	text-align: center;
+
+}
+#detailsPlacehold{
+	align-items: center;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 20px;
+	vertical-align: center;
+	text-align: center;
 }
 
 @media all and (max-width: 830px) {
