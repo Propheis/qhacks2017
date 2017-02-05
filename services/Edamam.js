@@ -3,7 +3,7 @@ var https = require('https')
 
 /**
  * Forms a url to fetch data from the Edamam API
- * @param {keywordList:String[]} - The list of recipe keywords to search for
+ * @param {keywordList:String[] or String} - The list of recipe keywords to search for or a single string keyword
  * @returns {String} - The well formed url to query Edamam
  */
  function createRequestUrl(keywordList) {
@@ -12,13 +12,17 @@ var https = require('https')
   "&app_key=" + config.edamamAPI.app_key + 
   "&from=0&to=50&q=";
   // Add our keywords
-  keywordList.forEach(function(keyword, index) {
-    // escape 
-    queryString += encodeURIComponent(keyword);
+  if (typeof keywordList === "string") {
+    queryString += encodeURIComponent(keywordList);
+  } else {
+    keywordList.forEach(function(keyword, index) {
+      // escape 
+      queryString += encodeURIComponent(keyword);
 
-    if (index < keywordList.length - 1)
-      queryString += "%2B";
-  });
+      if (index < keywordList.length - 1)
+        queryString += "%2B";
+    });
+  }
 
   return queryUrl = "https://api.edamam.com/search" + queryString;
 }
