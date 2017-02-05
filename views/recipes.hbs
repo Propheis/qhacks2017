@@ -54,11 +54,35 @@
 			padding-left: 15px;
 			margin-left: 20px;
 		}
+
+		#header {
+			display: flex;
+			justify-content: flex-end;
+		}
 	</style>
 </head>
 
 <body>
 	<div id="page">
+	<!--Emma added the options and home buttons-->
+		<div id="header">
+			
+			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+				<a type="button" class="btn btn-default" href="/">
+					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+				</a>
+				<div class="btn-group" role="group">
+    				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      					<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+    				</button>
+					<ul class="dropdown-menu">
+      					<li><a href="#">Vegetarian</a></li>
+      					<li><a href="#">Vegan</a></li>
+      					<li><a href="#">Gluten Free</a></li>
+    				</ul>
+  				</div> <!--end button-group-->
+  			</div><!--end dropDownMenu-->
+		</div><!--end header-->
 		<div class="recipeList">
 			<div class="recipe">
 				<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
