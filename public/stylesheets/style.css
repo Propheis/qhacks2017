@@ -161,3 +161,6 @@ html {
 	text-align: center;
 	font-family: 'Anonymous Pro', sans-serif;
 }
+#searchWarning {
+	color: #808080;
+}
