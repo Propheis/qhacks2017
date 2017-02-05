@@ -87,17 +87,23 @@ router.delete('/items/:id', function(req, res) {
 });
 
 router.post('/recipes', jsonParser, function(req, res) {
-  if (!req.body.forEach)
-    res.statusCode(400);
+  try {
+    var keywords = req.body["[]"];
+    if (!keywords)
+      throw new Error();
 
-  Edamam.getRecipeResults(req.body, function(err, results) {
-    if (err) {
-      console.log(err);
-      res.statusCode(500);
-    }
-    else
-      res.json(results);
-  });
+    Edamam.getRecipeResults(keywords, function(err, results) {
+      if (err) {
+        console.log(err);
+        res.statusCode(500);
+      }
+      else
+        res.json(results);
+    });
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(400);
+  }
 });
 
 ///////////////////////
