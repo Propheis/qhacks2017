@@ -176,6 +176,14 @@ html {
 	right: 0;
 }
 
+body {
+	display: flex;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 15px;
+	align-items: center;
+	padding: 0 30px;
+}
+
 /*Fancy checkboxes*/
 button.delete {
     background: transparent;
