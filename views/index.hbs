@@ -22,6 +22,7 @@
 
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 	<div id="container">
@@ -61,12 +62,12 @@
 			<div id="newItemAdd" class="input-group">
 				<input id="addFood" data-bind="textInput: newItem" placeholder="Add New Item..." type="text" class="form-control" aria-label="...">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-					</button>
 					<button id="addBtn" data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</button>
+					<a type="button" class="btn btn-default" href="/about">
+						<span> <i class="fa fa-question fa-lg" aria-hidden="true"></i></span>
+					</a>
 				</div><!--end input-group-btn-->
 			</div><!--end newItemAdd-->
 		</div><!--end footer-->

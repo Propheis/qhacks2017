@@ -1,6 +1,9 @@
 function RecipeViewModel() {
 	var self = this;
 	self.recipes = ko.observableArray([]);
+	self.recipesLoaded = ko.computed(function(){
+		return self.recipes().length > 0;
+	});
 	self.searchText = ko.observable("");
 	self.keywordList = ko.computed(function(){
 		return self.searchText().split(" ");
