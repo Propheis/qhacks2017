@@ -2,7 +2,57 @@
 <html>
 <!--
 	This is the webpage for the detailed view for each recipe
- -->
+-->
+
 
 <head>
-	
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
+	<style>
+		#map {
+			height: 500px;
+			width: 360px;
+			vertical-align: left;
+		}
+
+		#sidebar {
+			overflow: scroll;
+			overflow-x: hidden;
+		}
+		.page {
+			background: #00B7FF;
+			background-color: #ffffff;
+			flex-direction: column;
+			box-shadow: 5px 5px #D5D5CF;
+		}
+		.food {
+			display: flex;
+			font-size: 15px;
+			font-style: bold;
+			align-items: center;
+			flex-direction: column;
+			font-family: 'Nixie One', sans-serif;
+		}
+		.recipe {
+			font-size: 20px;
+			list-style-type: circle;
+			text-align: center;
+			font-family: 'Anonymous Pro', sans-serif;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<div class="food">
+			<h1> Turkey Dinner </h1>
+			<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
+		</div>
+		<div class="recipe">
+			<h2> Recipe </h2>
+			<p> Some random recipe here lol </p>
+		</div>
+	</div>
+</body>
+</html>
