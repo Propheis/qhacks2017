@@ -10,7 +10,7 @@ var https = require('https')
   // Build the query string to search the API
   var queryString = "?app_id=" + config.edamamAPI.app_id +
   "&app_key=" + config.edamamAPI.app_key + 
-  "&from=0&to=50&q=";
+  "&from=0&to=20&q=";
   // Add our keywords
   if (typeof keywordList === "string") {
     queryString += encodeURIComponent(keywordList);
