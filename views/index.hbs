@@ -48,9 +48,9 @@
 		</div><!--end header-->
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
-		<div id="content">
-			<div data-bind="foreach: items" id="singleItem">
-				<input id="food1" type="checkbox" name="foodItem" value="">
+		<div id="content" class="col-sm-12">
+			<div data-bind="foreach: items" id="singleItem" class="checkbox">
+				<button class="btn delete"><span class="glyphicon glyphicon-trash"></span></button>
 				<label data-bind="text: displayName()"></label>
 				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
 			</div><!--end singleItem-->

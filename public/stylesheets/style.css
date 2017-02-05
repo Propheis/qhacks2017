@@ -176,6 +176,16 @@ html {
 	right: 0;
 }
 
+/*Fancy checkboxes*/
+button.delete {
+    background: transparent;
+    padding: 4px 8px 2px 7px;
+}
+
+button.delete:hover {
+    border: 1px solid #ccc;
+}
+
 /* Pretty sliders <3 http://codepen.io/chriscoyier/pen/FtnAa */
 input[type=range] {
 	-webkit-appearance: none;
