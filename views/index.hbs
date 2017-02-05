@@ -64,13 +64,13 @@
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
 		<div id="content">
-			<div id="singleItem">
+			<div data-bind="forech: item" id="singleItem">
 			<input id="food1" type="checkbox" name="foodItem" value="">
-				<label for="food1">Item1</label>
+				<label data-bind="text: displayName()">Item1</label>
 				<input type="range" name="groceryItems">
 			</div><!--end singleItem-->
 			<div id="singleItem">
-				<input id="food2" type="checkbox" name="foodItem" value="">
+				<input id="food2" type="checkbox" name="foodItem" value="" data-bind="checked: isGone()">
 				<label for="food2">Item2</label>
 				<input type="range" name="groceryItems">
 			</div>
@@ -92,5 +92,6 @@
 		</div><!--end footer-->
 	</div><!--end container-->
 </body>
+<script type="text/javascript" src="/scripts/main.js"></script>
 </html>
 
