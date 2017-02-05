@@ -21,16 +21,18 @@
 </div>-->
 
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1 id= "title">
+		<img src="http://i.imgur.com/HqBrcJu.png" style="width:75px;height:75px;">
+			<h1 id= "website">
 				myEats 
 			</h1>
 			<!--Dropdown menu and search buttons-->
-			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+			<div id="defdropDownMenu" class="btn-group" role="group" aria-label="...">
 				<a type="button" class="btn btn-default" href="/recipes">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</a>
@@ -52,7 +54,7 @@
 			<div data-bind="foreach: items" id="singleItem">
 				<input id="food1" type="checkbox" name="foodItem" value="">
 				<label data-bind="text: displayName()"></label>
-				<input class="percentSlider" data-bind="value: percentRemaining, attr: { 'data-item-id': _id }" type="range" name="grocerysItems">
+				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
@@ -64,7 +66,7 @@
 					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
 					</button>
-					<button id="addBtn" data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
+					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</button>
 				</div><!--end input-group-btn-->

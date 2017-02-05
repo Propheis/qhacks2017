@@ -1,5 +1,5 @@
 body {
-	font-family: 14px font: 'Nixie One', sans-serif;;
+	font-family: 14px font: 'Nixie One', sans-serif;
 	background-color: rgb(243, 242, 236);
 }
 
@@ -16,16 +16,14 @@ a {
 	text-align: left;
 	display: flex;
 	align-items: center;
+	max-height: 70px;
 	justify-content: space-between;
 	font-family: 'Nixie One', sans-serif;
-	padding: 0 20px 30px 0
+	padding: 0 10px 0px 0
 }
-#title {
-	display: flex;
-	text-align: left;
-	align-items: center;
-	justify-content: space-between;
-	font-family: 'Nixie One', sans-serif;
+#header img {
+	margin-left: 40px;
+	padding:5px;
 }
 #footer {
 	position: fixed;
@@ -37,11 +35,12 @@ a {
 h1{
 	margin: 20px;
 }
-.btn-group {
-	margin-right: 10px;
+#defdropDownMenu {
+	margin-top: 0px;
+	padding-right: 40px;
 }
 #content {
-	margin: 0 30px;
+	margin: 0 30px 50px;
 	background: #ffffff;
 	box-shadow: 5px 5px #D5D5CF;
 	flex-direction: row;
@@ -57,8 +56,9 @@ h1{
 }
 #website {
 	font-family: 'Nixie One', sans-serif;
-	font-family: 'Anonymous Pro', sans-serif;
-	padding: 15px;
+	padding: 10px;
+	display: inline-flex;
+	align-content: left;
 }
 #map {
 	height: 640px;
@@ -93,13 +93,16 @@ html {
 .desc {
 	margin-left: 20px;
 	max-width: 450px;
+	max-height: 400px;
 	font-size: 22px;
 	padding: 10px;
 	border-right: dotted #D5D5CF;
+
+	overflow-x: hidden;
 }
 .tags {
 	display: inline-flex;
-	font-size: 20px;
+	font-size: 16px;
 	align-items: right;
 	font-family: 'Anonymous Pro', sans-serif;
 	padding-left: 15px;
@@ -107,6 +110,9 @@ html {
 	margin-top: 30px;
 	flex: 0;
 	min-width: 400px;
+}
+#singleItem {
+	font-family: 'Nixie One', sans-serif;
 }
 
 @media all and (max-width: 830px) {
@@ -140,6 +146,8 @@ html {
 	.tags {
 		flex-wrap: nowrap;
 		min-width: 100%;
+		border-bottom: solid #D5D5CF;
+		padding-bottom: 20px;
 	}
 	.desc {
 		border-right: transparent;
@@ -152,7 +160,7 @@ html {
 	background-color: #ffffff;
 	flex-direction: column;
 	box-shadow: 5px 5px #D5D5CF;
-	height: 500px;
+	min-height: 500px;
 }
 .food {
 	display: flex;
@@ -175,7 +183,17 @@ html {
 	left: inherit;
 	right: 0;
 }
-
+.currentRecipe {
+	align-content: center;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Nixie One', sans-serif;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+.col-lg-6 {
+	padding-top: 15px;
+}
 /* Pretty sliders <3 http://codepen.io/chriscoyier/pen/FtnAa */
 input[type=range] {
 	-webkit-appearance: none;
@@ -191,7 +209,7 @@ input[type=range]::-webkit-slider-runnable-track {
 	cursor: pointer;
 	animate: 0.2s;
 	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-	background: #e6efec;
+	background: #b9e3d7;
 	border-radius: 25px;
 	border: 0px solid #000101;
 }
@@ -201,13 +219,13 @@ input[type=range]::-webkit-slider-thumb {
 	height: 20px;
 	width: 39px;
 	border-radius: 7px;
-	background: #bbeddf;
+	background: #00b3b3;
 	cursor: pointer;
 	-webkit-appearance: none;
 	margin-top: -3.6px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-	background: #e6efec;
+	background: #a2c3b9;
 }
 input[type=range]::-moz-range-track {
 	width: 100%;
@@ -215,7 +233,7 @@ input[type=range]::-moz-range-track {
 	cursor: pointer;
 	animate: 0.2s;
 	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
-	background: #e6efec;
+	background: #99ffdd;
 	border-radius: 25px;
 	border: 0px solid #000101;
 }
@@ -225,7 +243,7 @@ input[type=range]::-moz-range-thumb {
 	height: 20px;
 	width: 39px;
 	border-radius: 7px;
-	background: #bbeddf;
+	background: #00b3b3;
 	cursor: pointer;
 }
 input[type=range]::-ms-track {
@@ -239,13 +257,13 @@ input[type=range]::-ms-track {
 	color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-	background: #e6efec;
+	background: #99ffdd;
 	border: 0px solid #000101;
 	border-radius: 50px;
 	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
 }
 input[type=range]::-ms-fill-upper {
-	background: #e6efec;
+	background: #99ffdd;
 	border: 0px solid #000101;
 	border-radius: 50px;
 	box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
@@ -256,12 +274,12 @@ input[type=range]::-ms-thumb {
 	height: 20px;
 	width: 39px;
 	border-radius: 7px;
-	background: #bbeddf;
+	background: #00b3b3;
 	cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
-	background: #e6efec;
+	background: #a2c3b9;
 }
 input[type=range]:focus::-ms-fill-upper {
-	background: #e6efec;
+	background: #a2c3b9;
 }
