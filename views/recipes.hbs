@@ -27,7 +27,7 @@
 			margin: 0;
 			padding: 0;
 		}
-		.recipe {
+		.listing {
 			background: #00B7FF;
 			display: flex;
 			flex-direction: row;
@@ -54,15 +54,26 @@
 			padding-left: 15px;
 			margin-left: 20px;
 		}
+<<<<<<< HEAD
 
 		#header {
 			display: flex;
 			justify-content: flex-end;
+=======
+		@media all and (max-width: 780px) {
+			.listing {
+				flex-direction: column;
+			}
+			.listing img {
+				margin: 0 auto;
+			}
+>>>>>>> bee58404c0021e97bb3db43d4a4a55b159662a78
 		}
 	</style>
 </head>
 
 <body>
+<<<<<<< HEAD
 	<div id="page">
 	<!--Emma added the options and home buttons-->
 		<div id="header">
@@ -97,7 +108,45 @@
 						<li>Bread</li>
 						<li>Cranberries</li>
 					</ul>
+=======
+
+	{{!-- <div id="page" class="flex-container">
+		<div id = "header">
+			<font size=30> Recipes </font>
+		</div>
+		<div data-bind="foreach: recipes" id="contents" class="flex-container">
+			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+			<div class="flex-item">
+				<div id="desc">
+					<font onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"size=10></font>
+					<p><font data-bind="text: ingredientLines" size=6></font>
+					</p>
+>>>>>>> bee58404c0021e97bb3db43d4a4a55b159662a78
 				</div>
+			</div>
+			
+		</div>
+	</div>
+</div> --}}
+
+
+	<div id="page">	
+		<div data-bind="foreach: recipes" class="listing">
+			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+			<div class="desc">
+				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
+				<p data-bind="foreach: ingredientLines">
+					<span data-bind="text: $data"></span>, 
+				</p>
+			</div>
+			<div class="verticalLine"></div>
+			<div class="tags">
+				<p data-bind="foreach: healthLabels">
+					<span data-bind="text: $data"></span>, 
+				</p>
 			</div>
 		</div>
 	</div>
+</body>
+<script src="/scripts/recipescript.js"></script>
+</html>
