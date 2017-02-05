@@ -83,7 +83,7 @@ html {
 	background-color: #ffffff;
 	box-shadow: 5px 5px #D5D5CF;
 	font-family: 'Nixie One', sans-serif;
-	padding: 20px;
+	/*padding: 20px;*/
 	border-bottom: solid #D5D5CF;
 	flex-wrap: wrap;
 }
@@ -93,9 +93,12 @@ html {
 .desc {
 	margin-left: 20px;
 	max-width: 450px;
+	/*max-height: 400px;*/
 	font-size: 22px;
 	padding: 10px;
 	border-right: dotted #D5D5CF;
+
+	/*overflow-x: hidden;*/
 }
 .tags {
 	display: inline-flex;
@@ -147,26 +150,7 @@ html {
 	}
 }
 
-@media all and (max-width: 830px) {
-	.listing {
-		flex-direction: column;
-		align-items: center;
-	}
-	.listing img {
-		margin: 20px auto 0px auto;
-		align-content: center;
 
-	}
-	.tags {
-		text-align: center;
-		margin: 10px auto 10px auto;
-	}
-	.desc {
-		border-right: transparent;
-		text-align: center;
-		margin: 0 auto;
-	}
-}
 @media all and (max-width: 1230px) {
 	.listing {
 		flex-direction: row;
@@ -185,12 +169,12 @@ html {
 		padding: 10px;
 	}
 }
+
 .page {
 	background: #00B7FF;
 	background-color: #ffffff;
 	flex-direction: column;
 	box-shadow: 5px 5px #D5D5CF;
-	height: 500px;
 }
 .food {
 	display: flex;

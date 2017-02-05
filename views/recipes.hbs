@@ -40,19 +40,22 @@
 	<p id="recPlaceholder">Search our large library of recipes by entering the ingredients you wish to use above separated by spaces!</p>
 	<!-- /ko -->
 	<!-- ko if: recipesLoaded -->
-	<div data-bind="foreach: recipes, visible: recipesLoaded()" class="listing" style="display: none;">
-		<img data-bind="attr: {src: recipe.image}" style="width:300px;height:300px;">
-		<div class="desc">
-			<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: recipe.label, attr:{'data-item-url': recipe.url}"></h1>
-			<p data-bind="foreach: recipe.ingredientLines">
-				<span data-bind="text: $data"></span>, 
-			</p>
-		</div>
-		<div class="tags">
-			<p data-bind="foreach: recipe.healthLabels">
-				<span data-bind="text: $data"></span>, 
-			</p>
-		</div>
+	<div data-bind="foreach: recipes, visible: recipesLoaded()" style="display: none;">
+		<div class="listing">
+    <img data-bind="attr: {src: recipe.image}" style="width:300px;height:300px;">
+    <div class="desc">
+      <h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: recipe.label, attr:{'data-item-url': recipe.url}"></h1>
+      <p data-bind="foreach: recipe.ingredientLines">
+        <span data-bind="text: $data"></span>, 
+      </p>
+    </div>
+    <div class="verticalLine"></div>
+    <div class="tags">
+      <p data-bind="foreach: recipe.healthLabels">
+        <span data-bind="text: $data"></span>, 
+      </p>
+    </div>
+    </div>
 	</div>
 	<!--/ko -->
 
