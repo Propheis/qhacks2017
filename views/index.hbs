@@ -8,8 +8,7 @@
    -Created: 05/03/17
 -->
 
-<<<<<<< HEAD
-<h1>Homepage</h1>
+<!--<h1>Homepage</h1>
 <div data-bind="foreach: items">
 	<input type="checkbox" data-bind="checked: isGone()">
 	<h1 data-bind="text: displayName()"></h1>
@@ -19,19 +18,47 @@
 		<li data-bind="text: $data"></li>
 	</ul>
 	<script type="text/javascript" src="/scripts/main.js"></script>
-</div>
-=======
+</div>-->
+
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
 	<style type="text/css">
+
+		#header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-family: 'Nixie One', sans-serif;
+			padding: 0 0 30px 0
+		}
+
+		#header h1 {
+			margin: 0;
+
+		}
+
+		body {
+			font-family: 'Nixie One', sans-serif;
+		}
+
+		#footer {
+			position: absolute;
+			bottom: 0;
+    		left: 0;
+   	 		right: 0;
+   			z-index: 100;
+		}
+
+
 	</style> 
 </head>
 <body>
 	<div id="containter">
 		<div id="header">
-			<h1 id= "website">
+			<h1 id= "website"><b>
 				MyEats 
-			</h1>
+			</b></h1>
 
 			<!--Dropdown menu and search buttons-->
 			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
@@ -53,20 +80,17 @@
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
 		<div id="content">
-			<div id="singleItem">
+			<div data-bind="forech: item" id="singleItem">
+			<input id="food1" type="checkbox" name="foodItem" value="">
+				<label data-bind="text: displayName()">Item1</label>
 				<input type="range" name="groceryItems">
-				<input type="checkbox" name="foodItem" value="">
 			</div><!--end singleItem-->
-			<div id="singleItem">
-				<input type="range" name="groceryItems">
-				<input type="checkbox" name="foodItem" value="">
-			</div>
 		</div><!--end content-->
 
 		<!--Add new item textbox and button and camera button-->
 		<div id="footer">
 			<div id="newItemAdd" class="input-group">
-				<input type="text" class="form-control" aria-label="...">
+				<input type="text" class="form-control" placeholder="Add New Item..." aria-label="...">
 				<div class="input-group-btn">
   					<button type="button" class="btn btn-default">
   						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
@@ -79,6 +103,6 @@
 		</div><!--end footer-->
 	</div><!--end container-->
 </body>
+<script type="text/javascript" src="/scripts/main.js"></script>
 </html>
 
->>>>>>> 91917758f504f4399599d561a57c6aa47a211d9b
