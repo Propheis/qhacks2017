@@ -50,7 +50,7 @@ function GroceryViewModel() {
 		}
 	};
 	self.removeItem = function(item) { 
-		$.ajax("/api/items/" + item.id, {
+		$.ajax("/api/items/" + item._id(), {
 			method: "DELETE"
 		});
 		self.items.destroy(item); 
