@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <!--
-   -This is the webapp myEats, designed by "1337 eats" for QHacks 2017
-   -myEats was created in order to help with food management, and ensure food is not wasted needlessly. The app takes inventory of your fridge or pantry, and searches a database of recipes that can be made with the ingredients you have on hand
+    This is the webapp myEats, designed by "1337 eats" for QHacks 2017
+    myEats was created in order to help with food management, and ensure food is not wasted needlessly. The app takes inventory of your fridge or pantry, and searches a database of recipes that can be made with the ingredients you have on hand
 
    -Authors: Deven Bernard, Emma Fletcher, Kevin Zuern, and Marissa Huang
    -Created: 05/03/17
 -->
 
+<<<<<<< HEAD
 <h1>Homepage</h1>
 <div data-bind="foreach: items">
 	<input type="checkbox" data-bind="checked: isGone()">
@@ -19,3 +20,65 @@
 	</ul>
 	<script type="text/javascript" src="/scripts/main.js"></script>
 </div>
+=======
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<style type="text/css">
+	</style> 
+</head>
+<body>
+	<div id="containter">
+		<div id="header">
+			<h1 id= "website">
+				MyEats 
+			</h1>
+
+			<!--Dropdown menu and search buttons-->
+			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+				<a type="button" class="btn btn-default" href="/recipes">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</a>
+				<div class="btn-group" role="group">
+    				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      					<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+    				</button>
+					<ul class="dropdown-menu">
+      					<li><a href="#">Vegetarian</a></li>
+      					<li><a href="#">Vegan</a></li>
+      					<li><a href="#">Gluten Free</a></li>
+    				</ul>
+  				</div> <!--end button-group-->
+  			</div><!--end dropDownMenu-->
+		</div><!--end header-->
+
+		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
+		<div id="content">
+			<div id="singleItem">
+				<input type="range" name="groceryItems">
+				<input type="checkbox" name="foodItem" value="">
+			</div><!--end singleItem-->
+			<div id="singleItem">
+				<input type="range" name="groceryItems">
+				<input type="checkbox" name="foodItem" value="">
+			</div>
+		</div><!--end content-->
+
+		<!--Add new item textbox and button and camera button-->
+		<div id="footer">
+			<div id="newItemAdd" class="input-group">
+				<input type="text" class="form-control" aria-label="...">
+				<div class="input-group-btn">
+  					<button type="button" class="btn btn-default">
+  						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+  					</button>
+  					<button type="button" class="btn btn-default">
+  						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  					</button>
+  				</div><!--end input-group-btn-->
+			</div><!--end newItemAdd-->
+		</div><!--end footer-->
+	</div><!--end container-->
+</body>
+</html>
+
+>>>>>>> 91917758f504f4399599d561a57c6aa47a211d9b

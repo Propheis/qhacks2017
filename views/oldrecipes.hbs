@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!--
+	This is the webpage for the Recipe Search of myEats, which implements edamam's recipe API to match available ingredients to recipes containing them
+-->
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<style>
+		#map {
+			height: 640px;
+			width: 360px;
+			vertical-align: left;
+		}
+
+		#sidebar {
+			overflow: scroll;
+			overflow-x: hidden;
+		}
+
+		html {
+			min-height: 100%;
+		}
+		body {
+			min-height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: 'Montserrat', sans-serif;
+		}
+		.flex-container {
+			display: flex;
+			flex-direction:	row;
+			align-items: left;
+			flex-wrap: wrap;
+			margin: 20px;
+			min-width: 100%;
+		}
+		.flex-item {
+			display: inline-block;
+			vertical-align: top;
+			height: 300px;
+			width: 500px;
+			margin-left: 20px;
+			background-color: #ffffff;
+			border: 1px solid #626262;
+			box-shadow: 5px 5px #D5D5CF;
+			padding: 0 0 0 5px;
+		}
+		.flex-tags {
+			display: flex;
+			align-items: left;
+			height: 50px;
+			width: 50px;
+			margin: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="page" class="flex-container">
+		<div id = "header">
+			<font size=30> Recipes </font>
+		</div>
+		<div id="contents" class="flex-item">
+			<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
+			<div class="flex-item">
+				<div id="desc">
+					<font size=9>Turkey Dinner</font>
+					<p><font size=6>A delicious turkey dinner, perfect for the holidays! Easy to follow recipes for beginners, making your Thanksgiving an easy one! </font></p>
+				</div>
+			</div>
+			<div class="flex-tags">
+				<p>Tags: Turkey, Bread, Cranberries</p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

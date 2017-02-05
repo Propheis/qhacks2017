@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <!--
-	-This is the webpage for the Recipe Search of myEats, which implements edamam's recipe API to match available ingredients to recipes containing them
+	This is the webpage for the Recipe Search of myEats, which implements edamam's recipe API to match available ingredients to recipes containing them
 -->
 
 <head>
 	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
 	<style>
 		#map {
 			height: 640px;
@@ -26,43 +26,48 @@
 			min-height: 100%;
 			margin: 0;
 			padding: 0;
-			font-family: 'Montserrat', sans-serif;
 		}
-		.flex-container {
+		.listing {
+			background: #00B7FF;
 			display: flex;
-			flex-direction:	row;
-			align-items: left;
-			flex-wrap: wrap;
-			margin: 20px;
-			min-width: 100%;
-		}
-		.flex-item {
-			display: inline-block;
-			vertical-align: top;
-			height: 300px;
-			width: 500px;
-			margin-left: 20px;
+			flex-direction: row;
+			font-size: 15px;
 			background-color: #ffffff;
-			border: 1px solid #626262;
 			box-shadow: 5px 5px #D5D5CF;
-			padding: 0 0 0 5px;
+			font-family: 'Nixie One', sans-serif;
 		}
-		.flex-tags {
-			display: flex;
+		.desc {
+			margin-left: 20px;
+			max-width: 450px;
+			font-size: 22px;
+			padding: 10px;
+		}
+		.verticalLine {
+			border-left: dotted #D5D5CF;
+		}
+		.tags ul {
+			font-size: 20px;
+			vertical-align: middle;
+			list-style-type: circle;
 			align-items: left;
-			height: 50px;
-			width: 50px;
-			margin: 5px;
+			font-family: 'Anonymous Pro', sans-serif;
+			padding-left: 15px;
+			margin-left: 20px;
 		}
-		h1,
-		h2 {
-			margin-top: 0;
+		@media all and (max-width: 780px) {
+			.listing {
+				flex-direction: column;
+			}
+			.listing img {
+				margin: 0 auto;
+			}
 		}
 	</style>
 </head>
 
 <body>
-	<div id="page" class="flex-container">
+
+	{{!-- <div id="page" class="flex-container">
 		<div id = "header">
 			<font size=30> Recipes </font>
 		</div>
@@ -73,15 +78,31 @@
 					<font onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"size=10></font>
 					<p><font data-bind="text: ingredientLines" size=6></font>
 					</p>
-					<div class="flex-tags">
-						<p data-bind="text: healthLabels"></p>
-					</div>
 				</div>
 			</div>
 			
 		</div>
 	</div>
-</div>
-<script src="/scripts/recipescript.js"></script>
+</div> --}}
+
+
+	<div id="page">	
+		<div data-bind="foreach: recipes" class="listing">
+			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+			<div class="desc">
+				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
+				<p data-bind="foreach: ingredientLines">
+					<span data-bind="text: $data"></span>, 
+				</p>
+			</div>
+			<div class="verticalLine"></div>
+			<div class="tags">
+				<p data-bind="foreach: healthLabels">
+					<span data-bind="text: $data"></span>, 
+				</p>
+			</div>
+		</div>
+	</div>
 </body>
+<script src="/scripts/recipescript.js"></script>
 </html>

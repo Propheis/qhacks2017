@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<!--
+	This is the webpage for the detailed view for each recipe
+ -->
+
+<head> 
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Days+One">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style>
+		#map {
+			height: 640px;
+			width: 360px;
+			vertical-align: left;
+		}
+
+		#sidebar {
+			overflow: scroll;
+			overflow-x: hidden;
+		}
+
+		html {
+		}
+		body {
+			min-height: 100%;
+			margin: 0;
+			padding: 0;
+			min-height: 100%;
+			font-family: 'Montserrat', sans-serif;
+		}
+		.flex-container {
+			display: flex;
+			flex-direction:	column;
+			align-items: center;
+			flex-wrap: wrap;
+			margin: 20px;
+			min-width: 100%;
+		}
+		.flex-item {
+			vertical-align: top;
+			border-color: transparent;
+			align-items: left;
+			height: 500px;
+			width: 500px;
+			margin: 20px;
+			background-color: #ffffff;
+			border: 1px solid #626262;
+			box-shadow: 5px 5px #D5D5CF;
+			padding: 0 0 0 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="page" class="flex-container">
+		<div id = "header">
+			<font size=30 align="left"> Turkey Dinner </font>
+		</div>
+		<div id="contents" class="flex-container">
+			<img src="http://www.tdc.ca/roastturkey.jpg" style="width:340;height:400px" align="middle">
+			<div class="flex-item">
+				<div id="desc">
+					<font size=6>Ingredients</font>
+					<p><font size=5><span class="glyphicon">&#xe250;</span>Turkey</p>
+					</font>
+				</div>
+			</div>
+		</div>
+	</div>
