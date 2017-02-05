@@ -29,6 +29,7 @@ function GroceryViewModel() {
 		console.log("Item deleted");
 	};
 	self.startup = function (){
+		$("#addFood").focus();
 		$.get("/api/items", null, function (itemList){
 			itemList.forEach(function(item){
 				var food = new Food(item.displayName, item.percentRemaining, item.knownAliases, item._id, item._rev);
