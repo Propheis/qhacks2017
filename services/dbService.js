@@ -36,6 +36,7 @@ function getItems(callback) {
  function updateItem(item, callback) {
   if (!item._id) {
     item._id = guid();
+    delete item._rev;
     items.insert(item, callback);
   }
   else {
