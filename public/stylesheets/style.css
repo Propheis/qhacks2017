@@ -40,6 +40,7 @@ h1{
 	padding-right: 40px;
 }
 #content {
+
 	margin: 0 30px 50px;
 	background: #ffffff;
 	box-shadow: 5px 5px #D5D5CF;
@@ -111,8 +112,25 @@ html {
 	flex: 0;
 	min-width: 400px;
 }
+
 #singleItem {
 	font-family: 'Nixie One', sans-serif;
+}
+
+#recPlaceholder{
+	align-items: center;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 20px;
+	vertical-align: center;
+	text-align: center;
+
+}
+#detailsPlacehold{
+	align-items: center;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 20px;
+	vertical-align: center;
+	text-align: center;
 }
 
 @media all and (max-width: 830px) {
@@ -183,6 +201,7 @@ html {
 	left: inherit;
 	right: 0;
 }
+
 .currentRecipe {
 	align-content: center;
 	text-align: center;
@@ -194,6 +213,25 @@ html {
 .col-lg-6 {
 	padding-top: 15px;
 }
+
+#bio {
+	display: flex;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 15px;
+	align-items: center;
+	padding: 0 30px;
+}
+
+/*Fancy checkboxes*/
+button.delete {
+    background: transparent;
+    padding: 4px 8px 2px 7px;
+}
+
+button.delete:hover {
+    border: 1px solid #ccc;
+}
+
 /* Pretty sliders <3 http://codepen.io/chriscoyier/pen/FtnAa */
 input[type=range] {
 	-webkit-appearance: none;

@@ -23,6 +23,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 	<div id="container">
@@ -41,18 +42,18 @@
 						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="#">Vegetarian</a></li>
-						<li><a href="#">Vegan</a></li>
-						<li><a href="#">Gluten Free</a></li>
+						<li><a href="/recipes?q=Vegetarian">Vegetarian</a></li>
+						<li><a href="/recipes?q=Vegan">Vegan</a></li>
+						<li><a href="/recipes?q=Gluten Free">Gluten Free</a></li>
 					</ul>
 				</div> <!--end button-group-->
 			</div><!--end dropDownMenu-->
 		</div><!--end header-->
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
-		<div id="content">
-			<div data-bind="foreach: items" id="singleItem">
-				<input id="food1" type="checkbox" name="foodItem" value="">
+		<div id="content" class="col-sm-12">
+			<div data-bind="foreach: items" id="singleItem" class="checkbox">
+				<button class="btn delete"><span class="glyphicon glyphicon-trash"></span></button>
 				<label data-bind="text: displayName()"></label>
 				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
@@ -63,12 +64,12 @@
 			<div id="newItemAdd" class="input-group">
 				<input id="addFood" data-bind="textInput: newItem" placeholder="Add New Item..." type="text" class="form-control" aria-label="...">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-					</button>
-					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
+					<button id="addBtn" data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</button>
+					<a type="button" class="btn btn-default" href="/about">
+						<span> <i class="fa fa-question fa-lg" aria-hidden="true"></i></span>
+					</a>
 				</div><!--end input-group-btn-->
 			</div><!--end newItemAdd-->
 		</div><!--end footer-->
