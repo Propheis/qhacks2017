@@ -15,28 +15,23 @@
 			<h1>
 				Recipes
 			</h1>
-<<<<<<< HEAD
-			<div id="dropDownMenu">
-  				<div class="col-lg-6">
-    				<div class="input-group">
+			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+  				<div>
+  					<div class="input-group">
       					<input data-bind="textInput: searchText" id="searchBar" type="text" class="form-control" placeholder="Enter...">
       					<span class="input-group-btn">
-      						<a data-bind="click: searchRecipes" type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-							</a>
-        					<a type="button" class="btn btn-default" href="/">
-								<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-							</a>
+      						<a data-bind="click: searchRecipes" type="button" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+        					<a type="button" class="btn btn-default" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
         					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      							<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-    						</button>
+								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							</button>
 							<ul class="dropdown-menu">
       							<li><a href="#">Vegetarian	</a></li>
       							<li><a href="#">Vegan</a></li>
       							<li><a href="#">Gluten Free</a></li>
     						</ul>
       					</span>
-    				</div><!--end input-group -->
+  					</div>
   				</div><!--end col-lg-6-->
   			</div><!--end searchbar-->
 		</div><!--end header-->
@@ -55,41 +50,6 @@
 				<p data-bind="foreach: recipe.healthLabels">
 					<span data-bind="text: $data"></span>, 
 				</p>
-=======
-			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
-				<a type="button" class="btn btn-default" href="/">
-					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-				</a>
-				<div class="btn-group" role="group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-					</button>
-					<ul class="dropdown-menu">
-						<li><a href="#">Vegetarian</a></li>
-						<li><a href="#">Vegan</a></li>
-						<li><a href="#">Gluten Free</a></li>
-					</ul>
-				</div> <!--end button-group-->
-			</div><!--end dropDownMenu-->
-		</div><!--end header-->
-		<div data-bind="foreach: recipes">
-			<div class="listing">
-				<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
-				<div class="desc">
-					<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
-					<p data-bind="foreach: ingredientLines">
-						<span data-bind="text: $data"></span>, 
-					</p>
-				</div>
-				<div class="tags">
-					<p data-bind="foreach: healthLabels">
-						<span data-bind="text: $data"></span>, 
-					</div>
-				</div>
-				
-				<!--Emma added the options and home buttons-->
-
->>>>>>> aa4ae1ec0c76da6a9d661142e418f1555fa4c98b
 			</div>
 		</div>
 	</body>

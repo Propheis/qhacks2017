@@ -92,6 +92,8 @@ router.post('/recipes', jsonParser, function(req, res) {
     if (!keywords)
       throw new Error();
 
+    console.log(keywords);
+
     Edamam.getRecipeResults(keywords, function(err, results) {
       if (err) {
         console.log(err);

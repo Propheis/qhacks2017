@@ -7,6 +7,11 @@ a {
 	color: #00B7FF;
 }
 
+#page {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
 #header {
 	text-align: left;
 	display: flex;
