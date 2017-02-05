@@ -1,6 +1,5 @@
 const guid = require('uuid/v4');
-var ItemProvider = require('./ItemProvider')
-, Config = require('../Config')
+var Config = require('../Config')
 , nano = require('nano')(Config.dbUrl)
 , items = nano.use('items');
 

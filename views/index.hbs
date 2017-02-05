@@ -21,13 +21,12 @@
 </div>-->
 
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1 id= "website">
+			<h1 id= "title">
 				myEats 
 			</h1>
 			<!--Dropdown menu and search buttons-->
@@ -53,7 +52,7 @@
 			<div data-bind="foreach: items" id="singleItem">
 				<input id="food1" type="checkbox" name="foodItem" value="">
 				<label data-bind="text: displayName()"></label>
-				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
+				<input class="percentSlider" data-bind="value: percentRemaining, attr: { 'data-item-id': _id }" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
