@@ -52,7 +52,7 @@
 			<div data-bind="foreach: items" id="singleItem" class="checkbox">
 				<button class="btn delete"><span class="glyphicon glyphicon-trash"></span></button>
 				<label data-bind="text: displayName()"></label>
-				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
+				<input class="percentSlider" data-bind="value: percentRemaining, attr: { 'data-item-id': _id }" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
@@ -64,7 +64,7 @@
 					<button type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
 					</button>
-					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
+					<button id="addBtn" data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</button>
 				</div><!--end input-group-btn-->
