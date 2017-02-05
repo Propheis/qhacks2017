@@ -23,47 +23,12 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
-	<style type="text/css">
-
-		#header {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			font-family: 'Nixie One', sans-serif;
-			padding: 0 0 30px 0
-		}
-
-		#header h1 {
-			margin: 0;
-		}
-
-		body {
-			font-family: 'Nixie One', sans-serif;
-		}
-
-		#footer {
-			position: fixed;
-			bottom: 0;
-    		left: 0;
-   	 		right: 0;
-   			z-index: 100;
-		}
-
-		#content {
-			background-color: #FFFFFF;
-			padding: 25px;
-			box-shadow: 5px 5px 5px 5px #D5D5CF;
-
-		}
-
-
-	</style> 
 </head>
 <body>
-	<div id="containter">
+	<div id="container">
 		<div id="header">
 			<h1 id= "website">
-				MyEats
+				myEats 
 			</h1>
 			<!--Dropdown menu and search buttons-->
 			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
@@ -71,24 +36,24 @@
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</a>
 				<div class="btn-group" role="group">
-    				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      					<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-    				</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					</button>
 					<ul class="dropdown-menu">
-      					<li><a href="#">Vegetarian</a></li>
-      					<li><a href="#">Vegan</a></li>
-      					<li><a href="#">Gluten Free</a></li>
-    				</ul>
-  				</div> <!--end button-group-->
-  			</div><!--end dropDownMenu-->
+						<li><a href="#">Vegetarian</a></li>
+						<li><a href="#">Vegan</a></li>
+						<li><a href="#">Gluten Free</a></li>
+					</ul>
+				</div> <!--end button-group-->
+			</div><!--end dropDownMenu-->
 		</div><!--end header-->
 
 		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
 		<div id="content">
 			<div data-bind="foreach: items" id="singleItem">
-			<input id="food1" type="checkbox" name="foodItem" value="">
+				<input id="food1" type="checkbox" name="foodItem" value="">
 				<label data-bind="text: displayName()"></label>
-				<input data-bind="value: percentRemaining" type="range" name="groceryItems">
+				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
@@ -97,13 +62,13 @@
 			<div id="newItemAdd" class="input-group">
 				<input id="addFood" data-bind="textInput: newItem" placeholder="Add New Item..." type="text" class="form-control" aria-label="...">
 				<div class="input-group-btn">
-  					<button type="button" class="btn btn-default">
-  						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-  					</button>
-  					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
-  						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-  					</button>
-  				</div><!--end input-group-btn-->
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+					</button>
+					<button data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+				</div><!--end input-group-btn-->
 			</div><!--end newItemAdd-->
 		</div><!--end footer-->
 	</div><!--end container-->

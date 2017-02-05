@@ -7,78 +7,15 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
-	<style>
-		#map {
-			height: 640px;
-			width: 360px;
-			vertical-align: left;
-		}
-
-		#sidebar {
-			overflow: scroll;
-			overflow-x: hidden;
-		}
-
-		html {
-			min-height: 100%;
-		}
-		body {
-			min-height: 100%;
-			margin: 0;
-			padding: 0;
-		}
-		.listing {
-			background: #00B7FF;
-			display: flex;
-			flex-direction: row;
-			font-size: 15px;
-			background-color: #ffffff;
-			box-shadow: 5px 5px #D5D5CF;
-			font-family: 'Nixie One', sans-serif;
-		}
-		.desc {
-			margin-left: 20px;
-			max-width: 450px;
-			font-size: 22px;
-			padding: 10px;
-		}
-		.verticalLine {
-			border-left: dotted #D5D5CF;
-		}
-		.tags ul {
-			font-size: 20px;
-			vertical-align: middle;
-			list-style-type: circle;
-			align-items: left;
-			font-family: 'Anonymous Pro', sans-serif;
-			padding-left: 15px;
-			margin-left: 20px;
-		}
-
-		#header {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			font-family: 'Nixie One', sans-serif;
-
-		@media all and (max-width: 780px) {
-			.listing {
-				flex-direction: column;
-			}
-			.listing img {
-				margin: 0 auto;
-			}
-		}
-	</style>
 </head>
 
 <body>
-	<div id="page">
-	<!--Emma added the options and home buttons-->
+	<div id="page">	
 		<div id="header">
 			<h1>
-			Recipes
+				Recipes
 			</h1>
+<<<<<<< HEAD
 			<div id="dropDownMenu">
   				<div class="col-lg-6">
     				<div class="input-group">
@@ -118,9 +55,43 @@
 				<p data-bind="foreach: recipe.healthLabels">
 					<span data-bind="text: $data"></span>, 
 				</p>
+=======
+			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+				<a type="button" class="btn btn-default" href="/">
+					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+				</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Vegetarian</a></li>
+						<li><a href="#">Vegan</a></li>
+						<li><a href="#">Gluten Free</a></li>
+					</ul>
+				</div> <!--end button-group-->
+			</div><!--end dropDownMenu-->
+		</div><!--end header-->
+		<div data-bind="foreach: recipes">
+			<div class="listing">
+				<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+				<div class="desc">
+					<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
+					<p data-bind="foreach: ingredientLines">
+						<span data-bind="text: $data"></span>, 
+					</p>
+				</div>
+				<div class="tags">
+					<p data-bind="foreach: healthLabels">
+						<span data-bind="text: $data"></span>, 
+					</div>
+				</div>
+				
+				<!--Emma added the options and home buttons-->
+
+>>>>>>> aa4ae1ec0c76da6a9d661142e418f1555fa4c98b
 			</div>
 		</div>
-	</div>
-</body>
-<script src="/scripts/recipescript.js"></script>
-</html>
+	</body>
+	<script src="/scripts/recipescript.js"></script>
+	</html>
