@@ -66,19 +66,22 @@
 		<div id = "header">
 			<font size=30> Recipes </font>
 		</div>
-		<div id="contents" class="flex-container">
-			<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
+		<div data-bind="foreach: recipes" id="contents" class="flex-container">
+			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
 			<div class="flex-item">
 				<div id="desc">
-					<font size=10>Turkey Dinner</font>
-					<p><font size=6>A delicious turkey dinner, perfect for the holidays! Easy to follow recipes for beginners, making your Thanksgiving an easy one! </font></p>
+					<font onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"size=10></font>
+					<p><font data-bind="text: ingredientLines" size=6></font>
+					</p>
+					<div class="flex-tags">
+						<p data-bind="text: healthLabels"></p>
+					</div>
 				</div>
 			</div>
-			<div class="flex-tags">
-				<p>Tags: Turkey, Bread, Cranberries</p>
-			</div>
+			
 		</div>
 	</div>
 </div>
+<script src="/scripts/recipescript.js"></script>
 </body>
 </html>

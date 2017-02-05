@@ -9,3 +9,13 @@
 -->
 
 <h1>Homepage</h1>
+<div data-bind="foreach: items">
+	<input type="checkbox" data-bind="checked: isGone()">
+	<h1 data-bind="text: displayName()"></h1>
+	<p>Percent Remaining <span data-bind="text: percentRemaining()">
+	</span></p>
+	<ul data-bind="foreach: knownAliases">
+		<li data-bind="text: $data"></li>
+	</ul>
+	<script type="text/javascript" src="/scripts/main.js"></script>
+</div>
