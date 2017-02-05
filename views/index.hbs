@@ -30,10 +30,24 @@
 			align-items: center;
 			justify-content: space-between;
 			font-family: 'Nixie One', sans-serif;
+			padding: 0 0 30px 0
 		}
 
 		#header h1 {
 			margin: 0;
+
+		}
+
+		body {
+			font-family: 'Nixie One', sans-serif;
+		}
+
+		#footer {
+			position: absolute;
+			bottom: 0;
+    		left: 0;
+   	 		right: 0;
+   			z-index: 100;
 		}
 
 
@@ -42,9 +56,9 @@
 <body>
 	<div id="containter">
 		<div id="header">
-			<h1 id= "website">
+			<h1 id= "website"><b>
 				MyEats 
-			</h1>
+			</b></h1>
 
 			<!--Dropdown menu and search buttons-->
 			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
@@ -76,7 +90,7 @@
 		<!--Add new item textbox and button and camera button-->
 		<div id="footer">
 			<div id="newItemAdd" class="input-group">
-				<input type="text" class="form-control" aria-label="...">
+				<input type="text" class="form-control" placeholder="Add New Item..." aria-label="...">
 				<div class="input-group-btn">
   					<button type="button" class="btn btn-default">
   						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
