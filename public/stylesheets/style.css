@@ -191,7 +191,7 @@ html {
 	right: 0;
 }
 
-body {
+#aboutPage {
 	display: flex;
 	font-family: 'Nixie One', sans-serif;
 	font-size: 15px;
