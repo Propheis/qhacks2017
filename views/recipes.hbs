@@ -19,9 +19,9 @@
 			<div id="dropDownMenu">
   				<div class="col-lg-6">
     				<div class="input-group">
-      					<input type="text" class="form-control" placeholder="Enter...">
+      					<input data-bind="textInput: searchText" id="searchBar" type="text" class="form-control" placeholder="Enter...">
       					<span class="input-group-btn">
-      						<a type="button" class="btn btn-default">
+      						<a data-bind="click: searchRecipes" type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 							</a>
         					<a type="button" class="btn btn-default" href="/">
@@ -40,53 +40,19 @@
   				</div><!--end col-lg-6-->
   			</div><!--end searchbar-->
 		</div><!--end header-->
-		<div class="recipeList">
-			<div class="recipe">
-				<img src="http://i.dailymail.co.uk/i/pix/2009/12/06/article-1233697-0774A72D000005DC-694_468x371.jpg" style="width:300px;height:300px;">
-				<div class="desc">
-					<h1> Turkey Dinner </h1>
-					<p>A delicious turkey dinner, perfect for the holidays! Easy to follow recipes for beginners, making your Thanksgiving an easy one! </p>
-				</div>
-				<div class="verticalLine"></div>
-				<div class="tags">
-					<ul>
-						<li>Turkey</li>
-						<li>Bread</li>
-						<li>Cranberries</li>
-					</ul>
-
-	{{!-- <div id="page" class="flex-container">
-		<div id = "header">
-			<font size=30> Recipes </font>
-		</div>
-		<div data-bind="foreach: recipes" id="contents" class="flex-container">
-			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
-			<div class="flex-item">
-				<div id="desc">
-					<font onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"size=10></font>
-					<p><font data-bind="text: ingredientLines" size=6></font>
-					</p>
->>>>>>> bee58404c0021e97bb3db43d4a4a55b159662a78
-				</div>
-			</div>
-			
-		</div>
-	</div>
-</div> --}}
-
 
 	<div id="page">	
 		<div data-bind="foreach: recipes" class="listing">
-			<img data-bind="attr: {src: image}" style="width:300px;height:300px;">
+			<img data-bind="attr: {src: recipe.image}" style="width:300px;height:300px;">
 			<div class="desc">
-				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: label"></h1>
-				<p data-bind="foreach: ingredientLines">
+				<h1 onmouseenter="this.style.color= 'blue'" onmouseleave="this.style.color= 'black'" data-bind="text: recipe.label"></h1>
+				<p data-bind="foreach: recipe.ingredientLines">
 					<span data-bind="text: $data"></span>, 
 				</p>
 			</div>
 			<div class="verticalLine"></div>
 			<div class="tags">
-				<p data-bind="foreach: healthLabels">
+				<p data-bind="foreach: recipe.healthLabels">
 					<span data-bind="text: $data"></span>, 
 				</p>
 =======
