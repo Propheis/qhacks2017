@@ -10,7 +10,7 @@ function RecipeViewModel() {
 	});
 	self.isSearching = false;
 
-	self.searchRecipes = function (Recipe){
+	self.searchRecipes = function (){
 			self.isSearching = true;
 			$.post("/api/recipes", {'': self.keywordList()}, function (infoList){
 				self.recipes(infoList);
@@ -38,6 +38,19 @@ function onListingClick(event){
 	localStorage.setItem('recipe', JSON.stringify(recipe.recipe));
 	document.location.pathname="/details";
 }
+
+function getQueryVariable(variable)
+{
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if (pair[0] == variable)
+			return decodeURIComponent(pair[1]);
+	}
+	return(false);
+}
+
 var viewModel = new RecipeViewModel();
 ko.applyBindings(viewModel);
 $(document).keypress(function(e){
@@ -48,4 +61,8 @@ $(document).keypress(function(e){
 $(document).ready(function(){
 	$("#searchBar").focus();
 	$(document).on("click", ".listing h1", onListingClick);
+	if (getQueryVariable('q') !== false) {
+		viewModel.searchText(getQueryVariable('q'));
+		viewModel.searchRecipes();
+	}
 });

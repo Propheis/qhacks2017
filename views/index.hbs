@@ -21,16 +21,19 @@
 </div>-->
 
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1 id= "title">
+		<img src="http://i.imgur.com/HqBrcJu.png" style="width:75px;height:75px;">
+			<h1 id= "website">
 				myEats 
 			</h1>
 			<!--Dropdown menu and search buttons-->
-			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+			<div id="defdropDownMenu" class="btn-group" role="group" aria-label="...">
 				<a type="button" class="btn btn-default" href="/recipes">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 				</a>
@@ -39,9 +42,9 @@
 						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="#">Vegetarian</a></li>
-						<li><a href="#">Vegan</a></li>
-						<li><a href="#">Gluten Free</a></li>
+						<li><a href="/recipes?q=Vegetarian">Vegetarian</a></li>
+						<li><a href="/recipes?q=Vegan">Vegan</a></li>
+						<li><a href="/recipes?q=Gluten Free">Gluten Free</a></li>
 					</ul>
 				</div> <!--end button-group-->
 			</div><!--end dropDownMenu-->
@@ -52,7 +55,7 @@
 			<div data-bind="foreach: items" id="singleItem" class="checkbox">
 				<button data-bind="attr: {'data-item-id':_id}" class="btn delete"><span class="glyphicon glyphicon-trash"></span></button>
 				<label data-bind="text: displayName()"></label>
-				<input class="percentSlider" data-bind="value: percentRemaining, attr: { 'data-item-id': _id }" type="range" name="grocerysItems">
+				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
@@ -61,12 +64,12 @@
 			<div id="newItemAdd" class="input-group">
 				<input id="addFood" data-bind="textInput: newItem" placeholder="Add New Item..." type="text" class="form-control" aria-label="...">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-					</button>
 					<button id="addBtn" data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					</button>
+					<a type="button" class="btn btn-default" href="/about">
+						<span> <i class="fa fa-question fa-lg" aria-hidden="true"></i></span>
+					</a>
 				</div><!--end input-group-btn-->
 			</div><!--end newItemAdd-->
 		</div><!--end footer-->
