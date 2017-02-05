@@ -14,6 +14,8 @@ function GroceryViewModel() {
 
 	self.addItem = function () {
 		var newFood = new Food(self.newItem(), 100, []);
+		newFood._id = newFood._id();
+		newFood._rev = newFood._rev();
 		$.post("api/items", newFood, function (item) {
 			self.items.push(new Food (item.displayName, item.percentRemaining, item.knownAliases, item._id, item._rev));
 			console.log("Item added to server");
