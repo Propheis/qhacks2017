@@ -52,7 +52,7 @@
 			<div data-bind="foreach: items" id="singleItem">
 				<input id="food1" type="checkbox" name="foodItem" value="">
 				<label data-bind="text: displayName()"></label>
-				<input data-bind="value: percentRemaining" type="range" name="grocerysItems">
+				<input class="percentSlider" data-bind="value: percentRemaining, attr: { 'data-item-id': _id }" type="range" name="grocerysItems">
 			</div><!--end singleItem-->
 		</div><!--end content-->
 
