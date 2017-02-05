@@ -108,6 +108,21 @@ html {
 	flex: 0;
 	min-width: 400px;
 }
+#recPlaceholder{
+	align-items: center;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 20px;
+	vertical-align: center;
+	text-align: center;
+
+}
+#detailsPlacehold{
+	align-items: center;
+	font-family: 'Nixie One', sans-serif;
+	font-size: 20px;
+	vertical-align: center;
+	text-align: center;
+}
 
 @media all and (max-width: 830px) {
 	.listing {
