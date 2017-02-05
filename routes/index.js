@@ -10,7 +10,7 @@ router.get('/recipes', function(req, res, next) {
 	res.render('recipes', { title: 'Recipes' });
 });
 
-router.get('/detail', function(req, res, next) {
+router.get('/details', function(req, res, next) {
 	res.render('details', { title: 'Detail' });
 });
 
