@@ -1,1 +1,81 @@
-<h1>Homepage</h1>
+<!DOCTYPE html>
+<html>
+<!--
+    This is the webapp myEats, designed by "1337 eats" for QHacks 2017
+    myEats was created in order to help with food management, and ensure food is not wasted needlessly. The app takes inventory of your fridge or pantry, and searches a database of recipes that can be made with the ingredients you have on hand
+
+   -Authors: Deven Bernard, Emma Fletcher, Kevin Zuern, and Marissa Huang
+   -Created: 05/03/17
+-->
+
+<!--<h1>Homepage</h1>
+<div data-bind="foreach: items">
+	<input type="checkbox" data-bind="checked: isGone()">
+	<h1 data-bind="text: displayName()"></h1>
+	<p>Percent Remaining <span data-bind="text: percentRemaining()">
+	</span></p>
+	<ul data-bind="foreach: knownAliases">
+		<li data-bind="text: $data"></li>
+	</ul>
+	<script type="text/javascript" src="/scripts/main.js"></script>
+</div>-->
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1 id= "title">
+				myEats 
+			</h1>
+			<!--Dropdown menu and search buttons-->
+			<div id="dropDownMenu" class="btn-group" role="group" aria-label="...">
+				<a type="button" class="btn btn-default" href="/recipes">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</a>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="/recipes?q=Vegetarian">Vegetarian</a></li>
+						<li><a href="/recipes?q=Vegan">Vegan</a></li>
+						<li><a href="/recipes?q=Gluten Free">Gluten Free</a></li>
+					</ul>
+				</div> <!--end button-group-->
+			</div><!--end dropDownMenu-->
+		</div><!--end header-->
+
+		<!--Requires knockout to make it work for variables (add/delelte grocery items)-->
+		<div id="content">
+			<div data-bind="foreach: items" id="singleItem" class="checkbox">
+				<button data-bind="attr: {'data-item-id':_id}" class="btn delete"><span class="glyphicon glyphicon-trash"></span></button>
+				<label data-bind="text: displayName()"></label>
+				<input class="percentSlider" data-bind="value: percentRemaining, attr: { 'data-item-id': _id }" type="range" name="grocerysItems">
+			</div><!--end singleItem-->
+		</div><!--end content-->
+
+		<!--Add new item textbox and button and camera button-->
+		<div id="footer">
+			<div id="newItemAdd" class="input-group">
+				<input id="addFood" data-bind="textInput: newItem" placeholder="Add New Item..." type="text" class="form-control" aria-label="...">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+					</button>
+					<button id="addBtn" data-bind="click: addItem" onclick="newItemAdd.text = 'Add new item...'" type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+					<a type="button" class="btn btn-default" href="/about">
+						<span> <i class="fa fa-question fa-lg" aria-hidden="true"></i></span>
+					</a>
+				</div><!--end input-group-btn-->
+			</div><!--end newItemAdd-->
+		</div><!--end footer-->
+	</div><!--end container-->
+</body>
+<script type="text/javascript" src="/scripts/main.js"></script>
+</html>
+

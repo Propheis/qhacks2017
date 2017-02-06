@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!--
+	This is the webpage for the detailed view for each recipe
+-->
+
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Nixie+One|Anonymous+Pro" rel="stylesheet">
+</head>
+
+<body>
+	<div class="page">
+		<div class="col-lg-6">
+			<div class="input-group">
+				<a type="button" class="btn btn-default" href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+			</span>
+		</div><!--end input-group -->
+	</div><!--end col-lg-6-->
+	<h2> Recipe Details </h2>
+	<!-- ko if: currentRecipe -->
+	<div class="food">
+		<h1 data-bind="text: currentRecipe.label"></h1>
+		<img data-bind="attr: {src: currentRecipe.image}" style="width:300px;height:300px;">
+	</div>
+	<div class="currentRecipe">
+		<p data-bind="foreach: currentRecipe.ingredientLines">
+			<span data-bind="text: $data"></span>, 
+		</p>
+		<div class="tags">
+			<p data-bind="foreach: currentRecipe.healthLabels">
+				<span data-bind="text: $data"></span>, 
+			</p>
+		</div>
+	</div>
+	<!-- /ko -->
+	<!-- ko ifnot: currentRecipe -->
+	<p id="detailsPlacehold">First, you need to click on a recipe title to see its details! <a href="/recipes">Search for a recipe.</a></p>
+	<!-- /ko -->
+</div>
+</body>
+<script src="/scripts/detailscript.js"></script>
+</html>
